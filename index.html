@@ -28,15 +28,17 @@
             return (
                 <header>
                     <h1>{`Uia: ${titulo}`}</h1>
-                    <Menu />
+                    <Menu texto="Texto Um" endereco="http://google.com" />
                 </header>
             );
         }
 
-        function Menu(){
+        function Menu( props ){
+            console.log(props);
             return <nav>
                 <li><a href="">Home</a></li>
                 <li><a href="">Contato</a></li>
+                <li><a href={props.endereco}> {props.texto} </a></li>
             </nav>;
         }
 

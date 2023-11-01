@@ -18,12 +18,13 @@
         function PaginaInicial(){
             return (
                 <div>
-                    <Cabecalho />
+                    <Cabecalho titulo="Fala React!" />
                 </div>
             )
         }
 
-        function Cabecalho(){
+        function Cabecalho(props){
+            console.log(props);
             return (
                 <header>
                     <h1>Oie de novo! 🎃</h1>

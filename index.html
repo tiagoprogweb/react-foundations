@@ -14,7 +14,12 @@
     <script crossorigin src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
     <script type="text/jsx">
         const app = document.getElementById("app");
-        ReactDOM.render(<h1>Oie de novo! 🎃</h1>, app);      
+
+        function Cabecalho(){
+            return <h1>Oie de novo! 🎃</h1>;
+        }
+
+        ReactDOM.render(<Cabecalho />, app);      
     </script>
 </body>
 </html>

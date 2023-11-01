@@ -16,7 +16,19 @@
         const app = document.getElementById("app");
 
         function Cabecalho(){
-            return <h1>Oie de novo! 🎃</h1>;
+            return (
+                <header>
+                    <h1>Oie de novo! 🎃</h1>
+                    <Menu />
+                </header>
+            );
+        }
+
+        function Menu(){
+            return <nav>
+                <li><a href="">Home</a></li>
+                <li><a href="">Contato</a></li>
+            </nav>;
         }
 
         ReactDOM.render(<Cabecalho />, app);      

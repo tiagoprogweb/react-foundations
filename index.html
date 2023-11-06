@@ -29,15 +29,11 @@
                         <hr />
                         <ul>
                             { bandas
-                                .sort((a, b) => a.localeCompare(b)) // Ordena as bandas em ordem alfabética
                                 .map((banda) => <li key={banda}>{banda}</li>) // Mapeia e renderiza as bandas
                             }
                         </ul>
-                        
-                        
-                        { // array original alterado pelo sort
-                            console.log(bandas)
-                        } 
+                        <hr />
+                        <button onClick={alert("oi")}>Curtir</button>
                     </React.Fragment>
                 
             )

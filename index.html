@@ -18,6 +18,7 @@
 
         function PaginaInicial(){
             const bandas = ["Rush", "Slayer", "Pink Floyd", "Dream Theater"];
+            console.log(bandas);
 
             return (
                 
@@ -27,7 +28,10 @@
                         </div>
                         <hr />
                         <ul>
-                            {bandas.map( (banda) => <li key={banda}>{banda}</li> )}
+                            {bandas
+                                .sort((a, b) => a.localeCompare(b)) // Ordena as bandas em ordem alfabética
+                                .map((banda) => <li key={banda}>{banda}</li>) // Mapeia e renderiza as bandas
+                            }
                         </ul>
                     </React.Fragment>
                 

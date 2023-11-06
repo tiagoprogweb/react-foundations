@@ -13,13 +13,24 @@
     
     <script crossorigin src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
     <script type="text/jsx">
+
         const app = document.getElementById("app");
 
         function PaginaInicial(){
+            const bandas = ["Rush", "Slayer", "Pink Floyd", "Dream Theater"];
+
             return (
-                <div>
-                    <Cabecalho titulo="Fala React! Oie de novo! 🎃" />
-                </div>
+                
+                    <React.Fragment>
+                        <div>
+                            <Cabecalho titulo="Fala React! Oie de novo! 🎃" />
+                        </div>
+                        <hr />
+                        <ul>
+                            {bandas.map( (banda) => <li key={banda}>{banda}</li> )}
+                        </ul>
+                    </React.Fragment>
+                
             )
         }
 
@@ -28,6 +39,7 @@
             return (
                 <header>
                     <h1>{`Uia: ${titulo}`}</h1>
+                    <p><i>{titulo}</i></p>
                     <Menu texto="Texto Um" endereco="http://google.com" />
                 </header>
             );

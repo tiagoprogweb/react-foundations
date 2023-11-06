@@ -19,17 +19,6 @@
         function PaginaInicial(){
             const bandas = ["Rush", "Slayer", "Pink Floyd", "Dream Theater"];
             console.log(bandas);
-            
-            bandas.sort((a, b) => a.localeCompare(b)) // Ordena as bandas em ordem alfabética
-
-            //Se não for usar map, tem que
-            //fazer o sort e o loop antes do return e guardar os dados 
-            let itens = [];
-            for(const banda of bandas){
-                itens.push(<li key={banda}>{banda}</li>)
-            }
-
-            console.log(bandas); // e o array original é modificado
 
             return (
                 
@@ -39,8 +28,16 @@
                         </div>
                         <hr />
                         <ul>
-                            { itens }
+                            { bandas
+                                .sort((a, b) => a.localeCompare(b)) // Ordena as bandas em ordem alfabética
+                                .map((banda) => <li key={banda}>{banda}</li>) // Mapeia e renderiza as bandas
+                            }
                         </ul>
+                        
+                        
+                        { // array original alterado pelo sort
+                            console.log(bandas)
+                        } 
                     </React.Fragment>
                 
             )

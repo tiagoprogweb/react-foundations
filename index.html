@@ -17,12 +17,25 @@
         const app = document.getElementById("app");
 
         function PaginaInicial(){
+
+            /* Usando o hook useState para lidar com informações
+            que mudam com o passar do tempo e modificam a interface. Por exemplo,
+            ao clicar no botão, vamos mudar algo na interface/dom. 
+            
+            useState retorna array, que podemos pegar desestruturado.
+            O primeiro item do array é o valor do state, e o segundo é uma função pra atualizar o valor.
+            E entre () indicamos o valor inicial.
+            */
+            const [curtidas, setCurtidas] = React.useState(0); 
+
+
             const bandas = ["Rush", "Slayer", "Pink Floyd", "Dream Theater"];
             console.log(bandas);
 
             // funciona com a função fora também
             function manipularClique (){
-                alert("oi");
+                //alert("oi");
+                setCurtidas(curtidas + 1);
             }
 
             return (
@@ -38,7 +51,7 @@
                             }
                         </ul>
                         <hr />
-                        <button onClick={manipularClique}>Curtir</button>
+                        <button onClick={manipularClique}>Curtir: {curtidas}</button>
                     </React.Fragment>
                 
             )

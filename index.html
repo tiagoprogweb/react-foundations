@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    
+    <script crossorigin src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script type="text/jsx">
+
+        const app = document.getElementById("app");
+
+        function PaginaInicial(){
+            const bandas = ["Rush", "Slayer", "Pink Floyd", "Dream Theater"];
+            console.log(bandas);
+
+            return (
+                
+                    <React.Fragment>
+                        <div>
+                            <Cabecalho titulo="Fala React! Oie de novo! 🎃" />
+                        </div>
+                        <hr />
+                        <ul>
+                            { bandas
+                                .sort((a, b) => a.localeCompare(b)) // Ordena as bandas em ordem alfabética
+                                .map((banda) => <li key={banda}>{banda}</li>) // Mapeia e renderiza as bandas
+                            }
+                        </ul>
+                        
+                        
+                        { // array original alterado pelo sort
+                            console.log(bandas)
+                        } 
+                    </React.Fragment>
+                
+            )
+        }
+
+        function Cabecalho( {titulo} ){
+            console.log(titulo);
+            return (
+                <header>
+                    <h1>{`Uia: ${titulo}`}</h1>
+                    <p><i>{titulo}</i></p>
+                    <Menu texto="Texto Um" endereco="http://google.com" />
+                </header>
+            );
+        }
+
+        function Menu( props ){
+            console.log(props);
+            return <nav>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Contato</a></li>
+                    <li><a href={props.endereco}> {props.texto} </a></li>
+                </ul>
+            </nav>;
+        }
+
+        ReactDOM.render(<PaginaInicial />, app);      
+    </script>
+</body>
+</html>

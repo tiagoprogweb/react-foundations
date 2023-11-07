@@ -42,7 +42,7 @@
                 
                     <React.Fragment>
                         <div>
-                            <Cabecalho titulo="Fala React! Oie de novo! 🎃" />
+                            <Cabecalho titulo="Fala React! Oie de novo! 🎃" nome="Eu" />
                         </div>
                         <hr />
                         <ul>
@@ -57,12 +57,13 @@
             )
         }
 
-        function Cabecalho( {titulo} ){
+        function Cabecalho( {titulo, nome} ){
             console.log(titulo);
             return (
                 <header>
                     <h1>{`Uia: ${titulo}`}</h1>
                     <p><i>{titulo}</i></p>
+                    <p>Nome: <b><i>{nome ? nome : "Fulano" }</i></b></p>
                     <Menu texto="Texto Um" endereco="http://google.com" />
                 </header>
             );
